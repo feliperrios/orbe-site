@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbe · Pequenos produtos, grandes rotinas</title>
+<meta name="description" content="A Orbe reúne apps feitos para facilitar o dia a dia de quem treina, cuida e atende pessoas. Conheça o FitFlow.">
+<meta property="og:title" content="Orbe · Pequenos produtos, grandes rotinas">
+<meta property="og:description" content="Apps para facilitar o dia a dia de quem treina, cuida e atende pessoas.">
+<meta property="og:image" content="https://orbehub.app/assets/fitflow-capa.jpg">
+<meta property="og:url" content="https://orbehub.app/">
+<meta name="theme-color" content="#0b0f14">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="glow" aria-hidden="true"></div>
+
+<header class="nav wrap">
+  <a class="logo" href="/" aria-label="Orbe, página inicial"><span class="dot"></span>orbe</a>
+  <nav aria-label="Principal">
+    <ul>
+      <li><a href="#produtos">Produtos</a></li>
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+  <a class="cta" href="https://fitflow.orbehub.app">Entrar no FitFlow</a>
+</header>
+
+<main>
+  <section class="hero wrap">
+    <h1>Pequenos produtos,<br><b>grandes rotinas.</b></h1>
+    <p>A Orbe reúne apps feitos para facilitar o dia a dia de quem treina, cuida e atende pessoas.</p>
+  </section>
+
+  <section id="produtos" class="cards wrap" aria-label="Produtos">
+    <button class="card hl" type="button" id="open-fitflow" aria-haspopup="dialog">
+      <span class="st"><i></i>disponível · beta</span>
+      <span class="thumb"><img src="/assets/fitflow-thumb.jpg" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span>
+      <h3>FitFlow</h3>
+      <p>Aluno, personal e nutricionista conectados no mesmo app.</p>
+      <span class="more">Ver vídeo de apresentação →</span>
+    </button>
+    <article class="card dim">
+      <span class="st"><i></i>em breve</span>
+      <div class="thumb empty" aria-hidden="true"><span class="ring"></span></div>
+      <h3>Próximo app</h3>
+      <p>Em desenvolvimento. Logo aparece por aqui.</p>
+    </article>
+    <article class="card dim">
+      <span class="st"><i></i>ideia</span>
+      <div class="thumb empty" aria-hidden="true"><span class="ring"></span><span class="ring r2"></span></div>
+      <h3>Sugira um</h3>
+      <p>Conte o que facilitaria o seu trabalho. A próxima ideia pode ser sua.</p>
+    </article>
+  </section>
+
+  <section id="sobre" class="about wrap">
+    <div class="eyebrow">Sobre a Orbe</div>
+    <h2>Cada produto resolve um problema, <b>e resolve bem.</b></h2>
+    <p>A Orbe é a casa dos apps que estou criando. Começou com o FitFlow, para quem vive de treino e nutrição, e vai crescer com novos produtos simples, rápidos e feitos para o dia a dia de verdade.</p>
+  </section>
+
+  <section id="contato" class="contact wrap">
+    <div>
+      <div class="eyebrow">Contato</div>
+      <h2>Quer conversar sobre os produtos?</h2>
+      <p>Mande uma mensagem com sua dúvida, sugestão ou ideia de app.</p>
+    </div>
+    <a class="btn" href="mailto:contato@orbehub.app">contato@orbehub.app</a>
+  </section>
+</main>
+
+<footer class="foot wrap">
+  <span class="logo small"><span class="dot"></span>orbe</span>
+  <span>© <span id="ano">2026</span> Orbe · orbehub.app</span>
+</footer>
+
+<dialog id="video-modal" aria-label="Vídeo de apresentação do FitFlow">
+  <div class="modal">
+    <button class="close" type="button" id="close-video" aria-label="Fechar vídeo">×</button>
+    <video id="fitflow-video" src="/assets/fitflow-apresentacao.mp4" poster="/assets/fitflow-capa.jpg" controls playsinline preload="none"></video>
+    <div class="modal-foot">
+      <div><b>FitFlow</b><span>Treino, dieta e acompanhamento num lugar só.</span></div>
+      <a class="btn" href="https://fitflow.orbehub.app">Acessar o FitFlow →</a>
+    </div>
+  </div>
+</dialog>
+
+<script src="/script.js"></script>
+</body>
+</html>
