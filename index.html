@@ -15,61 +15,79 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700&family=Inter:wght@400;500;600&display=swap">
 <link rel="stylesheet" href="/style.css">
+<script>
+  // Escolhe o idioma antes de desenhar a página (evita "piscar" em português)
+  (function(){var l;try{l=localStorage.getItem('orbe-lang')}catch(e){}
+  if(!l){l=(navigator.language||'pt').toLowerCase().indexOf('pt')===0?'pt':'en'}
+  document.documentElement.setAttribute('data-lang',l);if(l==='en')document.documentElement.lang='en';})();
+</script>
 </head>
 <body>
 <div class="glow" aria-hidden="true"></div>
 
 <header class="nav wrap">
-  <a class="logo" href="/" aria-label="Orbe, página inicial"><span class="dot"></span>orbe</a>
-  <nav aria-label="Principal">
+  <a class="logo" href="/" data-i18n-aria="logoAria" aria-label="Orbe, página inicial"><span class="dot"></span>orbe</a>
+  <nav data-i18n-aria="navAria" aria-label="Principal">
     <ul>
-      <li><a href="#produtos">Produtos</a></li>
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#contato">Contato</a></li>
+      <li><a href="#produtos" data-i18n="navProducts">Produtos</a></li>
+      <li><a href="#sobre" data-i18n="navAbout">Sobre</a></li>
+      <li><a href="#contato" data-i18n="navContact">Contato</a></li>
     </ul>
   </nav>
-  <a class="cta" href="https://fitflow.orbehub.app">Entrar no FitFlow</a>
+  <div class="nav-right">
+    <div class="lang">
+      <button type="button" class="lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu" data-i18n-aria="langAria" aria-label="Idioma">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14.5 0 18M12 3c-3 3.5-3 14.5 0 18"/></svg>
+        <span id="lang-cur">PT</span><svg class="caret" width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M1 3l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+      </button>
+      <ul class="lang-menu" id="lang-menu" hidden>
+        <li><button type="button" data-lang="pt" aria-pressed="true">Português <span class="ok" aria-hidden="true">✓</span></button></li>
+        <li><button type="button" data-lang="en" aria-pressed="false">English <span class="ok" aria-hidden="true">✓</span></button></li>
+      </ul>
+    </div>
+    <a class="cta" href="https://fitflow.orbehub.app" data-i18n="ctaLogin">Entrar no FitFlow</a>
+  </div>
 </header>
 
 <main>
   <section class="hero wrap">
-    <h1>Pequenos produtos,<br><b>grandes rotinas.</b></h1>
-    <p>A Orbe reúne apps feitos para facilitar o dia a dia de quem treina, cuida e atende pessoas.</p>
+    <h1 data-i18n-html="heroTitle">Pequenos produtos,<br><b>grandes rotinas.</b></h1>
+    <p data-i18n="heroText">A Orbe reúne apps feitos para facilitar o dia a dia de quem treina, cuida e atende pessoas.</p>
   </section>
 
-  <section id="produtos" class="cards wrap" aria-label="Produtos">
+  <section id="produtos" class="cards wrap" data-i18n-aria="navProducts" aria-label="Produtos">
     <button class="card hl" type="button" id="open-fitflow" aria-haspopup="dialog">
-      <span class="st"><i></i>disponível · beta</span>
-      <span class="thumb"><img src="/assets/fitflow-thumb.jpg" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span>
+      <span class="st"><i></i><span data-i18n="stLive">disponível · beta</span></span>
+      <span class="thumb"><img id="fitflow-thumb" src="/assets/fitflow-thumb.jpg" alt="" width="1280" height="720" loading="lazy"><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span>
       <h3>FitFlow</h3>
-      <p>Aluno, personal e nutricionista conectados no mesmo app.</p>
-      <span class="more">Ver vídeo de apresentação →</span>
+      <p data-i18n="ffText">Aluno, personal e nutricionista conectados no mesmo app.</p>
+      <span class="more" data-i18n="ffMore">Ver vídeo de apresentação →</span>
     </button>
     <article class="card dim">
-      <span class="st"><i></i>em breve</span>
+      <span class="st"><i></i><span data-i18n="stSoon">em breve</span></span>
       <div class="thumb empty" aria-hidden="true"><span class="ring"></span></div>
-      <h3>Próximo app</h3>
-      <p>Em desenvolvimento. Logo aparece por aqui.</p>
+      <h3 data-i18n="nextTitle">Próximo app</h3>
+      <p data-i18n="nextText">Em desenvolvimento. Logo aparece por aqui.</p>
     </article>
     <article class="card dim">
-      <span class="st"><i></i>ideia</span>
+      <span class="st"><i></i><span data-i18n="stIdea">ideia</span></span>
       <div class="thumb empty" aria-hidden="true"><span class="ring"></span><span class="ring r2"></span></div>
-      <h3>Sugira um</h3>
-      <p>Conte o que facilitaria o seu trabalho. A próxima ideia pode ser sua.</p>
+      <h3 data-i18n="ideaTitle">Sugira um</h3>
+      <p data-i18n="ideaText">Conte o que facilitaria o seu trabalho. A próxima ideia pode ser sua.</p>
     </article>
   </section>
 
   <section id="sobre" class="about wrap">
-    <div class="eyebrow">Sobre a Orbe</div>
-    <h2>Cada produto resolve um problema, <b>e resolve bem.</b></h2>
-    <p>A Orbe é a casa dos apps que estou criando. Começou com o FitFlow, para quem vive de treino e nutrição, e vai crescer com novos produtos simples, rápidos e feitos para o dia a dia de verdade.</p>
+    <div class="eyebrow" data-i18n="aboutEyebrow">Sobre a Orbe</div>
+    <h2 data-i18n-html="aboutTitle">Cada produto resolve um problema, <b>e resolve bem.</b></h2>
+    <p data-i18n="aboutText">A Orbe é a casa dos apps que estou criando. Começou com o FitFlow, para quem vive de treino e nutrição, e vai crescer com novos produtos simples, rápidos e feitos para o dia a dia de verdade.</p>
   </section>
 
   <section id="contato" class="contact wrap">
     <div>
-      <div class="eyebrow">Contato</div>
-      <h2>Quer conversar sobre os produtos?</h2>
-      <p>Mande uma mensagem com sua dúvida, sugestão ou ideia de app.</p>
+      <div class="eyebrow" data-i18n="contactEyebrow">Contato</div>
+      <h2 data-i18n="contactTitle">Quer conversar sobre os produtos?</h2>
+      <p data-i18n="contactText">Mande uma mensagem com sua dúvida, sugestão ou ideia de app.</p>
     </div>
     <a class="btn" href="mailto:contato@orbehub.app">contato@orbehub.app</a>
   </section>
@@ -80,13 +98,13 @@
   <span>© <span id="ano">2026</span> Orbe · orbehub.app</span>
 </footer>
 
-<dialog id="video-modal" aria-label="Vídeo de apresentação do FitFlow">
+<dialog id="video-modal" data-i18n-aria="videoAria" aria-label="Vídeo de apresentação do FitFlow">
   <div class="modal">
-    <button class="close" type="button" id="close-video" aria-label="Fechar vídeo">×</button>
+    <button class="close" type="button" id="close-video" data-i18n-aria="closeAria" aria-label="Fechar vídeo">×</button>
     <video id="fitflow-video" src="/assets/fitflow-apresentacao.mp4" poster="/assets/fitflow-capa.jpg" controls playsinline preload="none"></video>
     <div class="modal-foot">
-      <div><b>FitFlow</b><span>Treino, dieta e acompanhamento num lugar só.</span></div>
-      <a class="btn" href="https://fitflow.orbehub.app">Acessar o FitFlow →</a>
+      <div><b>FitFlow</b><span data-i18n="modalText">Treino, dieta e acompanhamento num lugar só.</span></div>
+      <a class="btn" href="https://fitflow.orbehub.app" data-i18n="modalCta">Acessar o FitFlow →</a>
     </div>
   </div>
 </dialog>

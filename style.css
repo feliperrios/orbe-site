@@ -21,10 +21,24 @@ img{max-width:100%;display:block}
 .dot{width:22px;height:22px;border-radius:50%;border:2px solid var(--lime);position:relative;flex:none}
 .dot::after{content:"";position:absolute;width:6px;height:6px;border-radius:50%;background:var(--lime);top:-4px;left:6px}
 .small .dot{width:16px;height:16px}.small .dot::after{width:5px;height:5px;top:-3px;left:4px}
-.nav ul{display:flex;gap:32px;list-style:none;font-size:14px;color:var(--mut)}
-.nav ul a:hover{color:var(--fg)}
+.nav nav ul{display:flex;gap:32px;list-style:none;font-size:14px;color:var(--mut)}
+.nav nav ul a:hover{color:var(--fg)}
 .cta{border:1px solid var(--lime);color:var(--lime);padding:10px 20px;border-radius:99px;font-size:14px;white-space:nowrap;transition:background .2s,color .2s}
 .cta:hover{background:var(--lime);color:var(--lime-ink)}
+
+/* idioma: globo com menu */
+.nav-right{display:flex;align-items:center;gap:12px}
+.lang{position:relative}
+.lang-btn{display:flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:99px;background:transparent;color:var(--fg);font:600 13px var(--display);cursor:pointer;transition:border-color .2s}
+.lang-btn svg:first-child{color:var(--lime)}
+.lang-btn:hover,.lang-btn[aria-expanded="true"]{border-color:var(--lime)}
+.lang-btn[aria-expanded="true"] .caret{transform:rotate(180deg)}
+.lang-menu{position:absolute;top:calc(100% + 8px);right:0;z-index:10;width:170px;list-style:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px;box-shadow:0 16px 40px #000a}
+.lang-menu button{width:100%;display:flex;justify-content:space-between;align-items:center;padding:9px 12px;border:none;border-radius:9px;background:transparent;color:var(--mut);font:500 14px var(--body);cursor:pointer;text-align:left}
+.lang-menu button:hover{background:#1a232d;color:var(--fg)}
+.lang-menu button[aria-pressed="true"]{background:#1f2a36;color:var(--fg)}
+.lang-menu .ok{color:var(--lime);visibility:hidden}
+.lang-menu button[aria-pressed="true"] .ok{visibility:visible}
 
 /* hero */
 .hero{position:relative;z-index:1;text-align:center;padding-block:72px 24px}
@@ -80,11 +94,13 @@ dialog::backdrop{background:#05080bdd;backdrop-filter:blur(6px)}
 
 /* celular */
 @media (max-width:860px){
-  .nav ul{display:none}
+  .nav nav ul{display:none}
   .cards{grid-template-columns:1fr;max-width:480px}
   .hero{padding-block:48px 8px}
 }
 @media (max-width:420px){
-  .cta{padding:8px 14px;font-size:13px}
+  .cta{padding:8px 12px;font-size:12px}
+  .lang-btn{padding:8px 10px}
+  .nav-right{gap:8px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
