@@ -8,7 +8,9 @@ const EN = {
   navProducts: 'Products',
   navAbout: 'About',
   navContact: 'Contact',
-  ctaLogin: 'Sign in to FitFlow',
+  ctaLogin: 'Sign in',
+  menuFf: 'workouts and nutrition',
+  menuEt: 'trip expenses and itinerary',
   heroTitle: 'Small products,<br><b>big routines.</b>',
   heroText: 'Orbe brings together simple apps to organize your routine: workouts, nutrition, travel and whatever comes next.',
   stLive: 'available · beta',
@@ -106,6 +108,15 @@ langBtn.addEventListener('click', (e) => { e.stopPropagation(); abrirMenu(langMe
 langMenu.querySelectorAll('[data-lang]').forEach(b => b.addEventListener('click', () => { setLang(b.dataset.lang); abrirMenu(false); langBtn.focus(); }));
 document.addEventListener('click', (e) => { if (!e.target.closest('.lang')) abrirMenu(false); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !langMenu.hidden) { abrirMenu(false); langBtn.focus(); } });
+
+// Botão "Entrar": abre a lista com os apps
+const appsBtn = document.getElementById('apps-btn');
+const appsMenu = document.getElementById('apps-menu');
+const abrirApps = (abrir) => { appsMenu.hidden = !abrir; appsBtn.setAttribute('aria-expanded', String(abrir)); };
+appsBtn.addEventListener('click', (e) => { e.stopPropagation(); abrirMenu(false); abrirApps(appsMenu.hidden); });
+langBtn.addEventListener('click', () => abrirApps(false));
+document.addEventListener('click', (e) => { if (!e.target.closest('.apps')) abrirApps(false); });
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !appsMenu.hidden) { abrirApps(false); appsBtn.focus(); } });
 
 setLang(document.documentElement.getAttribute('data-lang') || 'pt');
 

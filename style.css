@@ -123,3 +123,15 @@ dialog::backdrop{background:#05080bdd;backdrop-filter:blur(6px)}
 .meta b{display:block;font:700 15px 'Space Grotesk',var(--display);letter-spacing:0;color:var(--ink)}
 .barcode{display:block;height:30px;border-radius:2px;opacity:.85;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 7px,transparent 7px 9px,var(--ink) 9px 10px,transparent 10px 13px)}
 dialog[data-product="etravel"] .modal-foot .btn{background:#ffd23f;color:#141414}
+
+/* botão Entrar com a lista de apps */
+.apps{position:relative}
+button.cta{background:transparent;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:var(--body)}
+.cta[aria-expanded="true"]{background:var(--lime);color:var(--lime-ink)}
+.cta[aria-expanded="true"] .caret{transform:rotate(180deg)}
+.apps-menu{position:absolute;top:calc(100% + 8px);right:0;z-index:10;width:250px;list-style:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:6px;box-shadow:0 16px 40px #000a}
+.apps-menu a{display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;font:600 14px var(--display);color:var(--fg)}
+.apps-menu a:hover,.apps-menu a:focus-visible{background:#1a232d}
+.apps-menu small{display:block;font:400 12px var(--body);color:var(--mut)}
+.app-ic{width:32px;height:32px;border-radius:9px;display:grid;place-items:center;flex:none}
+.app-ic.ff{background:var(--lime)}.app-ic.et{background:#ffd23f}
