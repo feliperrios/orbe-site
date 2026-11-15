@@ -104,3 +104,22 @@ dialog::backdrop{background:#05080bdd;backdrop-filter:blur(6px)}
   .nav-right{gap:8px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* E-Travel: cartão de embarque */
+.bp{--y:#ffd23f;--ink:#141414;background:var(--y);border:none;color:var(--ink);padding:0;gap:0;cursor:pointer;transition:transform .25s ease,box-shadow .25s ease}
+.bp:hover{transform:translateY(-4px);box-shadow:0 20px 50px #ffd23f33}
+.bp .st{color:var(--ink)}.bp .st i{background:var(--ink)}
+.bp-top{display:flex;flex-direction:column;gap:12px;padding:22px 22px 18px}
+.route{display:flex;justify-content:space-between;align-items:center;font:700 clamp(22px,2.4vw,30px) 'Space Grotesk',var(--display);letter-spacing:-.5px}
+.route small{display:block;font:600 11px var(--body);letter-spacing:1px;color:#5c4c0c}
+.route .to{text-align:right}
+.plane{font-size:22px}
+.cut{display:block;position:relative;margin:0 16px;border-top:2px dashed #14141455}
+.cut::before,.cut::after{content:"";position:absolute;top:-13px;width:24px;height:24px;border-radius:50%;background:var(--bg)}
+.cut::before{left:-28px}.cut::after{right:-28px}
+.bp-bot{display:flex;flex-direction:column;gap:10px;padding:18px 22px 22px;flex:1}
+.bp-bot p{color:#4a3d0a}
+.meta{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:8px;font:600 10px var(--body);letter-spacing:1px;color:#5c4c0c}
+.meta b{display:block;font:700 15px 'Space Grotesk',var(--display);letter-spacing:0;color:var(--ink)}
+.barcode{display:block;height:30px;border-radius:2px;opacity:.85;background:repeating-linear-gradient(90deg,var(--ink) 0 2px,transparent 2px 4px,var(--ink) 4px 7px,transparent 7px 9px,var(--ink) 9px 10px,transparent 10px 13px)}
+dialog[data-product="etravel"] .modal-foot .btn{background:#ffd23f;color:#141414}

@@ -5,7 +5,7 @@ Site estático (HTML, CSS e JS puros, sem build). Hospedado no Cloudflare Pages,
 - `index.html`: a página
 - `style.css`: o visual (cores do Órbita, layout Destaque)
 - `script.js`: troca de idioma (PT/EN, botão do globo) e abre o vídeo do FitFlow ao clicar no card. Os textos em inglês ficam no topo deste arquivo
-- `assets/`: vídeos de apresentação (PT e EN), capas e miniaturas
+- `assets/`: vídeos de apresentação do FitFlow e do E-Travel (PT e EN), capas e miniaturas. Os dados de cada produto (vídeo, link, textos da janela) ficam no objeto PRODUCTS do script.js
 - `_headers`: cache dos arquivos de mídia no Cloudflare
 - `favicon.svg`: ícone da aba
 
